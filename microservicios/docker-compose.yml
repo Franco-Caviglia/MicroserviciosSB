@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+    ###Posgres db for inventory;
+    db-inventory:
+      container_name: db-inventory
+      image: postgres
+      restart: unless-stopped
+      environment:
+        POSTGRES_DB: ms_inventory
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: frankviglia1
+      ports:
+        - 5431:5431
+      expose:
+        - 5431
+      command: -p 5431
+    ###MYSQL db for orders;
+    db-orders:
+        container_name: db-orders #Nombre contenedor en Docker;
+        image: mysql #Imagen que va a descargar Docker, por defecto la ultima;
+        restart: unless-stopped
+        environment:
+          MYSQL_DATABASE: ms_orders #Nombre base de datos de MySQL;
+          MYSQL_USER: root  #Credenciales del MySql;
+          MYSQL_PASSWORD:
+        ports:
+          - 3307:3307
+        expose:
+          - 3307
+    ###Posgres db for products;
+    db-products:
+      container_name: products #Nombre contenedor en Docker;
+      image: postgres #Imagen que va a descargar Docker, por defecto la ultima;
+      restart: unless-stopped
+      environment:
+        POSTGRES_DB: ms_products #Nombre base de datos de Postgres;
+        POSTGRES_USER: postgres #Credenciales del Postgres;
+        POSTGRES_PASSWORD: frankviglia1
+      ports:
+        - 5432:5432 #Mapeamos los puertos del container
+      expose:
+        - 5432
+      command: -p 5432
+
+
