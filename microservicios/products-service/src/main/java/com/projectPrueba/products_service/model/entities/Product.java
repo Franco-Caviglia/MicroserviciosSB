@@ -18,8 +18,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_product;
-    private String sku;
-    private String name;
+    private String sku; //Codigo del producto;
+    private String name; //Nombre del producto;
     private String description;
     private String status;
     private Double price;
