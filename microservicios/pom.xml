@@ -19,7 +19,6 @@
 	</properties>
 
 	<modules>
-		<module>abonados-service</module>
 		<module>inventory-service</module>
 		<module>orders-service</module>
 		<module>products-service</module>
